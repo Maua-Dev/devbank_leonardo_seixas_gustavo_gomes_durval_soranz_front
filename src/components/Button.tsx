@@ -1,9 +1,9 @@
-import Provide from "./Provide";
+// import Provide from "./Provide";
 
-export default function Button() {
-  const onClickHandler = (event) => {
-    Provide();
-  };
+// export default function Button() {
+//   const onClickHandler = (event) => {
+//     Provide();
+//   };
 
-  return <button onClick={onClickHandler}> ClickMe </button>;
-}
+//   return <button onClick={onClickHandler}> ClickMe </button>;
+// }
