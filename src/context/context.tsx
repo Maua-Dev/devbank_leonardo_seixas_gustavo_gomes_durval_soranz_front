@@ -7,6 +7,7 @@ type VariaveisGlobaisType = {
   conta: string;
   credito: number;
 
+
   setApi: React.Dispatch<React.SetStateAction<string>>;
   setNome: React.Dispatch<React.SetStateAction<string>>;
   setAgencia: React.Dispatch<React.SetStateAction<string>>;
@@ -16,7 +17,7 @@ type VariaveisGlobaisType = {
 
 const defaultVariaveisGlobais: VariaveisGlobaisType = {
   api: "",
-  nome: "",
+  nome: "g",
   agencia: "",
   conta: "",
   credito: 0,
