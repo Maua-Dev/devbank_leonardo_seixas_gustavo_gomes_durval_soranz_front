@@ -17,7 +17,7 @@ type VariaveisGlobaisType = {
 
 const defaultVariaveisGlobais: VariaveisGlobaisType = {
   api: "",
-  nome: "g",
+  nome: "",
   agencia: "",
   conta: "",
   credito: 0,
