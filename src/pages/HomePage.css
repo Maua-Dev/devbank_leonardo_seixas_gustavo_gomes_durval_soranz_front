@@ -1,0 +1,31 @@
+.displayLogo {
+  text-align: center;
+  position: relative;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  /* left: 50%; */
+  margin: 0 auto;
+  margin-top: 10%;
+  /* top: 50%%; */
+  align-items: center;
+  /* position: absolute; */
+  /* height: 800; */
+  /* width: 200; */
+}
+
+.gif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin-top: 7px;
+  padding: 10px;
+}
