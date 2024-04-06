@@ -12,6 +12,14 @@ export default function HSButton() {
       <button className="Logo" onClick={onClickHandler}>
         DevBank
       </button>
+      <div className="gif">
+        <img
+          src="https://media1.tenor.com/m/NpEqS-yMyLIAAAAd/coin-spinning-coin.gif"
+          width="300"
+          height="300"
+          alt="Coin Spinning Coin GIF - Coin Spinning Coin Money GIFs"
+        />
+      </div>
     </h1>
   );
 }

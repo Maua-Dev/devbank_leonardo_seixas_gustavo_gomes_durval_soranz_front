@@ -16,7 +16,7 @@ export default function HomePage() {
     if (buffer.startsWith("https://")) {
       setApi(buffer);
       setMensagemErro("");
-      console.log(`api=${api}`);
+      // console.log(`api=${api}`);
       navigate("/options");
     } else {
       setMensagemErro("URL Inválido");
@@ -26,23 +26,30 @@ export default function HomePage() {
 
   const onChangeHandler = (event) => {
     setBuffer(event.target.value);
-    console.log(buffer);
+    // console.log(buffer);
   };
 
   return (
-    <body>
+    <body
+      style={{ alignItems: "center", flexDirection: "column", display: "flex" }}
+    >
       <HSButton />
-      <div className="gif">
-        <img
-          src="https://media1.tenor.com/m/NpEqS-yMyLIAAAAd/coin-spinning-coin.gif"
-          width="300"
-          height="300"
-          alt="Coin Spinning Coin GIF - Coin Spinning Coin Money GIFs"
-        />
-      </div>
       <div className="container">
-        <input type="text" placeholder="Enter API" onChange={onChangeHandler} />
-        <button onClick={onClickHandler}>Enviar</button>
+        <input
+          type="text"
+          placeholder="Digite o API: "
+          onChange={onChangeHandler}
+        />
+        <button onClick={onClickHandler}>
+          Enviar
+          <img
+            className="share"
+            decoding="async"
+            width="20"
+            height="20"
+            src="src/components/gifs_img/share.png"
+          ></img>
+        </button>
         <div style={{ color: "red" }}>{mensagemErro}</div>
       </div>
     </body>
