@@ -4,6 +4,17 @@
   align-items: center;
 }
 
+.Logo {
+  cursor: pointer;
+  border-style: hidden;
+  padding: 0;
+  background-color: transparent;
+  font-size: 30px;
+  width: auto;
+  height: auto;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -17,6 +28,14 @@
   /* position: absolute; */
   /* height: 800; */
   /* width: 200; */
+}
+
+input {
+  font-size: large;
+  border-radius: 15px;
+  width: 500px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .gif {

@@ -1,19 +1,23 @@
 import { useContext, useState } from "react";
 import { VariaveisGlobais } from "../context/context";
-import AppRouter from "../approuter/AppRouter";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./HomePage.css";
+import HSButton from "../components/HomeScreenButton";
 
 export default function HomePage() {
   const { api, setApi } = useContext(VariaveisGlobais);
   const [buffer, setBuffer] = useState("");
   const [mensagemErro, setMensagemErro] = useState("");
 
+  const navigate = useNavigate();
+
   const onClickHandler = () => {
     console.log(`Buffer = ${buffer}`);
     if (buffer.startsWith("https://")) {
       setApi(buffer);
       setMensagemErro("");
-      window.location.replace("http://localhost:5173/options");
+      console.log(`api=${api}`);
+      navigate("/options");
     } else {
       setMensagemErro("URL Inválido");
       setBuffer("");
@@ -27,8 +31,7 @@ export default function HomePage() {
 
   return (
     <body>
-      {/* <Header /> */}
-      <h1 className="displayLogo">DevBank</h1>
+      <HSButton />
       <div className="gif">
         <img
           src="https://media1.tenor.com/m/NpEqS-yMyLIAAAAd/coin-spinning-coin.gif"

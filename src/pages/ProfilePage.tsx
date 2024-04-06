@@ -1,20 +1,55 @@
+import { useContext, useEffect, useState } from "react";
 import { VariaveisGlobais } from "../context/context";
+import axios from "../../node_modules/axios";
+import HSButton from "../components/HomeScreenButton";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfilePage() {
-  // const { api, setApi, conta, setConta,credito, setCredito,agncia,setAgencia } = useContext(VariaveisGlobais);
+  const { api, setNome, setConta, setCredito, setAgencia, credito } =
+    useContext(VariaveisGlobais);
+
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>("");
+
+  const navigate = useNavigate();
+
+  console.log(`api = ${api}`);
+
+  const resquestApi = async () => {
+    setIsLoading(true);
+    const response = await axios
+      .get(api)
+      .then((response) => {
+        // setConta(response.data.account);
+        setCredito(response.data.id);
+        // setAgencia(response.data.aggency);
+        // setNome(response.data.nome);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setIsLoading(false);
+      });
+    console.log(`credito=${credito}`);
+  };
+
+  useEffect(() => {
+    resquestApi();
+  }, []);
 
   const onClickHandler1 = () => {
-    window.location.replace("http://localhost:5173/deposit");
+    navigate("/deposit");
   };
   const onClickHandler2 = () => {
-    window.location.replace("http://localhost:5173/withdraw");
+    navigate("/withdraw");
   };
   const onClickHandler3 = () => {
-    window.location.replace("http://localhost:5173/transfer");
+    navigate("/transfer");
   };
 
   return (
-    <main>
+    <body>
+      <HSButton />
       <div>
         <button onClick={onClickHandler1} />
       </div>
@@ -24,6 +59,6 @@ export default function ProfilePage() {
       <div>
         <button onClick={onClickHandler3} />
       </div>
-    </main>
+    </body>
   );
 }
