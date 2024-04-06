@@ -6,13 +6,13 @@ import { PegarVariaveis } from "../context/context";
 
 export default function AppRouter() {
   return (
-    <PegarVariaveis>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/options" element={<ProfilePage />} />
-        </Routes>
-      </BrowserRouter>
-    </PegarVariaveis>
+    // <PegarVariaveis>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/options" element={<ProfilePage />} />
+      </Routes>
+    </BrowserRouter>
+    // {/* </PegarVariaveis> */}
   );
 }

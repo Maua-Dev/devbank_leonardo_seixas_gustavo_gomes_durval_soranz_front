@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { VariaveisGlobais } from "../context/context";
-import AppRouter from "../approuter/AppRouter";
-import { Link } from "react-router-dom";
+// import AppRouter from "../approuter/AppRouter";
+// import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const { api, setApi } = useContext(VariaveisGlobais);
@@ -18,8 +18,6 @@ export default function HomePage() {
       setMensagemErro("URL Inválido");
       setBuffer("");
     }
-
-    console.log(api);
   };
 
   const onChangeHandler = (event) => {
