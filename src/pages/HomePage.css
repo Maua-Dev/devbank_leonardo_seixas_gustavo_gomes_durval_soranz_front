@@ -1,15 +1,10 @@
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.topBar {
-  align-items: center;
-}
-
-.logo {
+.displayLogo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   position: relative;
-  display: inline-block;
-  left: 48%;
+  /* display: inline-block; */
+  /* left: 50%; */
   margin-top: 0;
   top: 0;
   margin: 0 auto;
@@ -20,15 +15,21 @@ body {
   /* display: flex; */
   /* justify-content: space-between; */
   align-items: center;
+  margin-bottom: auto;
+  margin-left: 0;
+  width: 300px;
+  height: 400px;
 }
 
-.logo {
-  left: 45%;
-}
-
-.displayContainer {
-  position: relative;
-  left: 0;
+.Logo {
+  cursor: pointer;
+  border-style: hidden;
+  padding: 0;
+  background-color: transparent;
+  font-size: 30px;
+  width: auto;
+  height: auto;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
 }
 
 .container {
@@ -38,30 +39,49 @@ body {
   justify-content: center;
   /* left: 50%; */
   margin: 0 auto;
-  margin-top: 5%;
-  /* top: 50%%; */
+  top: auto;
   align-items: center;
-  /* position: absolute; */
-  /* height: 800; */
+  position: relative;
+  height: auto;
   /* width: 200; */
+}
+
+input {
+  font-size: large;
+  border-radius: 15px;
+  width: 500px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .gif {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10%;
+}
+
+.share {
+  margin-left: 5px;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 button {
-  margin-top: 10px;
-  padding: 10px;
-}
-
-input {
-}
-
-h1 {
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
   display: flex;
-  justify-content: space-between;
-  /* justify-content: flex-start; */
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 10px;
+  width: 150px;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
+  background-color: lightgoldenrodyellow;
 }

@@ -1,0 +1,62 @@
+.containerOp {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  height: auto;
+  top: auto;
+}
+
+.topPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infoContainer {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 2px;
+  width: 400px;
+  padding: 5px;
+  background-color: lightgoldenrodyellow;
+}
+
+.op {
+  margin-inline: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.opButton {
+  height: 100px;
+  width: auto;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: lightgreen;
+}
+
+.Loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Make sure the loading display covers the entire viewport height */
+  width: 100vw; /* Make sure the loading display covers the entire viewport width */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Optional: Add a semi-transparent background */
+}
