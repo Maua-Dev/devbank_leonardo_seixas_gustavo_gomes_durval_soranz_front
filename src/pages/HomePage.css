@@ -1,7 +1,34 @@
-.displayLogo {
-  text-align: center;
-  position: relative;
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.topBar {
   align-items: center;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  left: 48%;
+  margin-top: 0;
+  top: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.topBar {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.logo {
+  left: 45%;
+}
+
+.displayContainer {
+  position: relative;
+  left: 0;
 }
 
 .container {
@@ -11,7 +38,7 @@
   justify-content: center;
   /* left: 50%; */
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 5%;
   /* top: 50%%; */
   align-items: center;
   /* position: absolute; */
@@ -26,6 +53,15 @@
 }
 
 button {
-  margin-top: 7px;
+  margin-top: 10px;
   padding: 10px;
+}
+
+input {
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: flex-start; */
 }

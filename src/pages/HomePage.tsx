@@ -1,13 +1,28 @@
 import { useContext, useState } from "react";
 import { VariaveisGlobais } from "../context/context";
+import Header from "../components/Header";
 // import AppRouter from "../approuter/AppRouter";
 // import { Link } from "react-router-dom";
 import "./HomePage.css";
+import Extract from "../components/Extract";
+import axios from "axios";
 
 export default function HomePage() {
   const { api, setApi } = useContext(VariaveisGlobais);
   const [buffer, setBuffer] = useState("");
   const [mensagemErro, setMensagemErro] = useState("");
+
+  const Extract = () => {
+    console.log(`api=${api}`);
+    axios
+      .get(api)
+      .then((response) => {
+        console.log(response.headers);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const onClickHandler = () => {
     console.log(`Buffer = ${buffer}`);
@@ -15,11 +30,11 @@ export default function HomePage() {
       setApi(buffer);
       setMensagemErro("");
       window.location.replace("http://localhost:5173/options");
+      Extract();
     } else {
       setMensagemErro("URL Inválido");
       setBuffer("");
     }
-
     console.log(api);
   };
 
@@ -30,8 +45,7 @@ export default function HomePage() {
 
   return (
     <body>
-      {/* <Header /> */}
-      <h1 className="displayLogo">DevBank</h1>
+      <Header />
       <div className="gif">
         <img
           src="https://media1.tenor.com/m/NpEqS-yMyLIAAAAd/coin-spinning-coin.gif"
@@ -41,7 +55,11 @@ export default function HomePage() {
         />
       </div>
       <div className="container">
-        <input type="text" placeholder="Enter API" onChange={onChangeHandler} />
+        <input
+          type="text"
+          placeholder="link do API"
+          onChange={onChangeHandler}
+        />
         <button onClick={onClickHandler}>Enviar</button>
         <div style={{ color: "red" }}>{mensagemErro}</div>
       </div>
