@@ -30,9 +30,9 @@ export default function ProfilePage() {
       .get(api)
       .then((response) => {
         setConta(response.data.account);
-        setCredito(response.data.credito);
-        setAgencia(response.data.aggency);
-        setNome(response.data.nome);
+        setCredito(response.data.current_balance);
+        setAgencia(response.data.agency);
+        setNome(response.data.name);
         setIsLoading(false);
       })
       .catch((error) => {

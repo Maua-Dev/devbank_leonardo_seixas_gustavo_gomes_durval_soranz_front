@@ -5,7 +5,7 @@ import "./HomePage.css";
 import HSButton from "../components/HomeScreenButton";
 
 export default function HomePage() {
-  const { api, setApi } = useContext(VariaveisGlobais);
+  const { setApi } = useContext(VariaveisGlobais);
   const [buffer, setBuffer] = useState("");
   const [mensagemErro, setMensagemErro] = useState("");
 
