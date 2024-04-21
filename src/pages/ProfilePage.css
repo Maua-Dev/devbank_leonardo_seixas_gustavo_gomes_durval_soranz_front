@@ -1,3 +1,7 @@
+body{
+  background-color: rgb(99, 146, 114);
+}
+
 .containerOp {
   position: relative;
   display: flex;
@@ -38,8 +42,9 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: large;
   border-radius: 20px;
+  color : white;
   cursor: pointer;
-  background-color: lightgreen;
+  background-color:  rgb(38, 120, 64);
 }
 
 .Loading {
