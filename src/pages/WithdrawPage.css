@@ -1,0 +1,57 @@
+s.DepositContents {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  /* width: 500px; */
+}
+
+.DepositButtons {
+  display: grid;
+  margin: 40px;
+  height: 250px;
+  width: 150px;
+}
+
+.DepositParams {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 300px;
+}
+
+.Sacar {
+  width: 150px;
+  font-size: large;
+  margin: 20px;
+  margin-top: 0px;
+}
+
+.SaqueLabel {
+  /* width: 200px; */
+  font-size: large;
+  margin: 20px;
+}
+
+.NotasLabel {
+  /* width: 150px; */
+  font-size: large;
+  margin: 20px;
+}
+
+.NotasSelect {
+  width: 80px;
+  height: auto;
+  font-size: auto;
+  margin: 20px;
+  margin-top: 0px;
+}
+
+hr {
+  color: black;
+
+  width: 100%;
+}

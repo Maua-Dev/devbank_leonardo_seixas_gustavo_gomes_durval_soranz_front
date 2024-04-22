@@ -15,8 +15,8 @@ export default function AppRouter() {
           <Route path="/" element={<HomePage />} />
           <Route path="/options" element={<ProfilePage />} />
           <Route path="/withdraw" element={<WithdrawPage />} />
-          <Route path="/transfer" element={<TransferPage />} />
           <Route path="/deposit" element={<DepositPage />} />
+          <Route path="/transfer" element={<TransferPage />} />
         </Routes>
       </BrowserRouter>
     </PegarVariaveis>
