@@ -14,9 +14,9 @@ export default function HSButton() {
       </button>
       <div className="gif">
         <img
-          src="https://media1.tenor.com/m/NpEqS-yMyLIAAAAd/coin-spinning-coin.gif"
-          width="300"
-          height="300"
+          src="src/components/gifs_img/Fw3P.gif"
+          width="200"
+          height="200"
           alt="Coin Spinning Coin GIF - Coin Spinning Coin Money GIFs"
         />
       </div>

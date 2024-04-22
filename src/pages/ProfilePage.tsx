@@ -112,7 +112,7 @@ export default function ProfilePage() {
             decoding="async"
             width="300"
             height="300"
-            src="/src/components/gifs_img/money-transfer-11086_256.gif"
+            src="/src/components/gifs_img/transfer.gif"
           ></img>
         </div>
       </div>
