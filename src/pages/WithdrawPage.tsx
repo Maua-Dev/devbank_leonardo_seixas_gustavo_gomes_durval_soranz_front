@@ -3,6 +3,7 @@ import { VariaveisGlobais } from "../context/context";
 import "./WithdrawPage.css";
 import HSButton from "../components/HomeScreenButton";
 import axios from "axios";
+import Loading from "../components/Loading";
 
 export default function Withdraw_Page() {
   const { api, credito, setCredito, conta, nome, agencia } =
@@ -20,16 +21,13 @@ export default function Withdraw_Page() {
   const [notas200, setNotas200] = useState<number>(0);
 
   useEffect(() => {
-    console.log(`credito:${credito}`);
-  }, [credito]);
-
-  useEffect(() => {
-    console.log(`toDisplay:${toDisplay}`);
-  }, [toDisplay]);
-
-  useEffect(() => {
-    console.log(`choice:${choice}`);
-  }, [choice]);
+    setNotas5(0);
+    setNotas10(0);
+    setNotas20(0);
+    setNotas50(0);
+    setNotas100(0);
+    setNotas200(0);
+  }, [])
 
   const postDeposit = async () => {
     setLoading(true);
@@ -47,10 +45,10 @@ export default function Withdraw_Page() {
         console.error(error);
       });
     console.log(response);
-    setCredito(response.data.current_balance);
+    setCredito(response?.data.current_balance);
   };
 
-  const onSelectHandler = (event) => {
+  const onSelectHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setChoice(parseInt(event.target.value));
   };
 
@@ -95,7 +93,7 @@ export default function Withdraw_Page() {
     setToDisplay(0);
   };
 
-  const onChangeHandler = (event) => {
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (isNaN(parseInt(event.target.value))) {
       setBuffer(0);
     } else {
@@ -112,6 +110,14 @@ export default function Withdraw_Page() {
       }}
     >
       <HSButton />
+      <main>
+        {loading && (
+          <p>
+            <Loading />
+          </p>
+        )}
+      </main>
+      
       <div className="infoContainer">
         <ul className="info">
           <li>conta: {conta}</li>

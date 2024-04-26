@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { VariaveisGlobais } from "../context/context";
 import "./DepositPage.css";
 import HSButton from "../components/HomeScreenButton";
+import Loading from "../components/Loading";
 import axios from "axios";
 
 export default function Deposit_Page() {
@@ -20,20 +21,17 @@ export default function Deposit_Page() {
   const [notas200, setNotas200] = useState<number>(0);
 
   useEffect(() => {
-    console.log(`credito:${credito}`);
-  }, [credito]);
-
-  useEffect(() => {
-    console.log(`toDisplay:${toDisplay}`);
-  }, [toDisplay]);
-
-  useEffect(() => {
-    console.log(`choice:${choice}`);
-  }, [choice]);
+    setNotas5(0)
+    setNotas10(0)
+    setNotas20(0)
+    setNotas50(0)
+    setNotas100(0)
+    setNotas200(0)
+  }, [])
 
   const postDeposit = async () => {
     setLoading(true);
-    const response = await axios
+    const response = await axios 
       .post(api + "/deposit", {
         "2": 0,
         "5": notas5,
@@ -46,16 +44,12 @@ export default function Deposit_Page() {
       .catch(function (error) {
         console.error(error);
       });
-    console.log(response);
-    setCredito(response.data.current_balance);
+    setCredito(response?.data.current_balance);
+    setLoading(false);
   };
 
-  const onSelectHandler = (event) => {
+  const onSelectHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setChoice(parseInt(event.target.value));
-  };
-
-  const onSubmitHandlerDisplay = () => {
-    setToDisplay(toDisplay + buffer * choice);
   };
 
   const onClickHandlerDisplay = () => {
@@ -101,7 +95,7 @@ export default function Deposit_Page() {
     setNotas200(0);
   };
 
-  const onChangeHandler = (event) => {
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (isNaN(parseInt(event.target.value))) {
       setBuffer(0);
     } else {
@@ -118,6 +112,14 @@ export default function Deposit_Page() {
       }}
     >
       <HSButton />
+      <main>
+        {loading && (
+          <p>
+            <Loading />
+          </p>
+        )}
+      </main>
+      
       <div className="infoContainer">
         <ul className="info">
           <li>conta: {conta}</li>
@@ -155,11 +157,10 @@ export default function Deposit_Page() {
               <input
                 type="number"
                 className="Sacar"
-                onSubmit={onSubmitHandlerDisplay}
                 onChange={onChangeHandler}
               />
               <label className="NotasLabel" htmlFor="options">
-                Sacar em Notas de:
+                Depositar em Notas de:
               </label>
               <select
                 className="NotasSelect"

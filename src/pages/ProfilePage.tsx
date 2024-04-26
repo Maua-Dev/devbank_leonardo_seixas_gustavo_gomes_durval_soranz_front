@@ -20,13 +20,12 @@ export default function ProfilePage() {
   } = useContext(VariaveisGlobais);
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
 
   const navigate = useNavigate();
 
   const resquestApi = async () => {
     setIsLoading(true);
-    const response = await axios
+    await axios
       .get(api)
       .then((response) => {
         setConta(response.data.account);
@@ -36,7 +35,6 @@ export default function ProfilePage() {
         setIsLoading(false);
       })
       .catch((error) => {
-        setError(error);
         setIsLoading(false);
         console.log({ error });
       })
@@ -73,7 +71,6 @@ export default function ProfilePage() {
           </ul>
         </div>
       </div>
-
       <main>
         {isLoading && (
           <p>

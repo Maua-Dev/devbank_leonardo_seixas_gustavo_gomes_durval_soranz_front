@@ -6,7 +6,7 @@ import HSButton from "../components/HomeScreenButton";
 
 export default function HomePage() {
   const { setApi } = useContext(VariaveisGlobais);
-  const [buffer, setBuffer] = useState("");
+  const [buffer, setBuffer] = useState("https://r2tcz6zsokynb72jb6o4ffd5nm0ryfyz.lambda-url.us-west-2.on.aws");
   const [mensagemErro, setMensagemErro] = useState("");
 
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export default function HomePage() {
     }
   };
 
-  const onChangeHandler = (event) => {
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBuffer(event.target.value);
     // console.log(buffer);
   };
@@ -38,6 +38,7 @@ export default function HomePage() {
         <input
           type="text"
           placeholder="Digite o API: "
+          value={"https://r2tcz6zsokynb72jb6o4ffd5nm0ryfyz.lambda-url.us-west-2.on.aws"}
           onChange={onChangeHandler}
         />
         <button onClick={onClickHandler}>
