@@ -46,6 +46,7 @@ export default function Withdraw_Page() {
       });
     console.log(response);
     setCredito(response?.data.current_balance);
+    setLoading(false);
   };
 
   const onSelectHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
