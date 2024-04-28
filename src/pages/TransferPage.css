@@ -41,3 +41,22 @@ p {
   font-size: 18px;
   margin-top: 20px;
 }
+
+.transaction-value {
+    position: relative;
+  }
+  
+  .transaction-value .arrow {
+    position: absolute;
+    margin-left: 5px;
+  }
+  
+  .red {
+    color: red;
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  

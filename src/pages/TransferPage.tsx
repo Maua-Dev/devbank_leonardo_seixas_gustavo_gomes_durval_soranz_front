@@ -32,6 +32,16 @@ export default function TransferPage() {
     fetchTransactions();
   }, [api]);
 
+  const renderTransactionValue = (type: string, value: number) => {
+    const arrowClass = type === 'deposit' ? 'up' : 'down';
+    const arrowIcon = arrowClass === 'down' ? '\u25BC' : '\u25B2';
+    return (
+      <span className={`transaction-value ${type === 'withdraw' ? 'red' : 'green'}`}>
+        {value} <span className={`arrow ${arrowClass}`}>{arrowIcon}</span>
+      </span>
+    );
+  };
+
   return (
     <div className="container">
       <h1>Histórico de Transações</h1>
@@ -53,7 +63,7 @@ export default function TransferPage() {
             {transactions.map((transaction, index) => (
               <tr key={index}>
                 <td>{transaction.type}</td>
-                <td>{transaction.value}</td>
+                <td>{renderTransactionValue(transaction.type, transaction.value)}</td>
                 <td>{transaction.current_balance}</td>
                 <td>{new Date(transaction.timestamp).toLocaleString()}</td>
               </tr>
