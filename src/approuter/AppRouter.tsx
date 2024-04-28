@@ -4,7 +4,7 @@ import ProfilePage from "../pages/ProfilePage";
 import { PegarVariaveis } from "../context/context";
 import WithdrawPage from "../pages/WithdrawPage";
 import DepositPage from "../pages/DepositPage";
-import TransferPage from "../pages/WithdrawPage";
+import TransferPage from "../pages/TransferPage";
 // import Header from "../components/Header";
 
 export default function AppRouter() {
