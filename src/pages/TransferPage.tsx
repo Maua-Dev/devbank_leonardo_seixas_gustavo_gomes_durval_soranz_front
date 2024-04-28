@@ -43,7 +43,7 @@ export default function TransferPage() {
         <table>
           <thead>
             <tr>
-              <th>Tipe</th>
+              <th>Tipo</th>
               <th>Valor</th>
               <th>Saldo Atual</th>
               <th>Dia e Hora</th>
